@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "hexlet-code"
+name = "hexlet-code3"
 version = "0.1.0"
 description = ""
 authors = ["Софья Григорович <sonyashkin@icloud.com>"]
@@ -8,10 +8,15 @@ packages = [{include = "gendiff"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+pyyaml = "^6.0"
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^6.0.0"
+pytest = "^7.2.1"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-gendiff = "gendiff.scripts.gendiff:main"
+gendiff = "gendiff.scripts.gendif:main"

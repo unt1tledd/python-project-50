@@ -9,3 +9,9 @@ install:
 
 gendiff:
 	poetry run python gendiff.scripts.gendiff.py
+
+lint:
+	poetry run flake8 gendiff
+
+pytest:
+	poetry run pytest
