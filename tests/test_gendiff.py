@@ -1,6 +1,5 @@
 import pytest
 import json
-from tests.fixtures import correct
 from gendiff.generate_diff import generate_diff
 
 
@@ -10,36 +9,31 @@ yaml1 = 'tests/fixtures/yaml/file1.yml'
 yaml2 = 'tests/fixtures/yaml/file2.yml'
 json3 = 'tests/fixtures/json/file3.json'
 json4 = 'tests/fixtures/json/file4.json'
-yaml3 = 'tests/fixtures/yaml/file3.yml'
-yaml4 = 'tests/fixtures/yaml/file4.yml'
+yaml3 = 'tests/fixtures/yaml/file3.yaml'
+yaml4 = 'tests/fixtures/yaml/file4.yaml'
 
 
-correct_result = open('tests/fixtures/correct/correct.txt', 'r')
-correct_result = correct_result.read()
-correct_result2 = open('tests/fixtures/correct/correct2.txt', 'r')
-correct_result2 = correct_result2.read()
-correct_result3 open('tests/fixtures/correct/correct3.txt', 'r'
+correct_result = generate_diff('tests/fixtures/yaml/file1.yml',
+                          'tests/fixtures/yaml/file2.yml')
+correct_result2 = generate_diff('tests/fixtures/json/file3.json',
+                             'tests/fixtures/json/file4.json', 'stylish')
+correct_result3 = generate_diff('tests/fixtures/json/file3.json',
+                                'tests/fixtures/json/file4.json', 'plain')
+correct_result4 = generate_diff('tests/fixtures/yaml/file3.yaml',
+                              'tests/fixtures/yaml/file4.yaml', 'json')
 
 
-
-def test_json():
-    assert correct_result == generate_diff(json1, json2)
-
-
-def test_yaml():
-    assert correct_result == generate_diff(yaml1, yaml2)
-
-
-def test_stylish():
-    assert correct_result2 == generate_diff(json3, json4)
-    assert correct_result2 == generate_diff(yaml3, yaml4)
-
-
-def test_plain():
-    assert correct_result3 == generate_diff(json3, json4, plain)
-    assert correct_result3 == generate_diff(yaml3, yaml4, plain)
-
-
-def test_json()
-    assert correct_result4 == generate_diff(json3, json4, json)
-    assert correct_result4 == generate_diff(yaml3, yaml4, json)
+@pytest.mark.parametrize("test_input1,test_input2,formatter,expected",
+                         [
+                             pytest.param(json1, json2, 'stylish', correct_result),
+                             pytest.param(yaml1, yaml2, 'stylish', correct_result),
+                             pytest.param(json3, json4, 'stylish', correct_result2),
+                             pytest.param(yaml3, yaml4, 'stylish', correct_result2),
+                             pytest.param(json3, json4, 'plain', correct_result3),
+                             pytest.param(yaml3, yaml4, 'plain', correct_result3),
+                             pytest.param(json4, json4, 'json', correct_result4),
+                             pytest.param(yaml3, yaml4, 'json', correct_result4)
+                         ]
+                         )
+def test_generate_diff(test_input1, test_input2, formatter, expected):
+    assert generate_diff(test_input1, test_input2, formatter) == expected
