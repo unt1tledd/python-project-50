@@ -17,7 +17,7 @@ def format_value(data, depth = 1):
 
 def stylish_format(diff, depth = 1):
     result = []
-    for k, v in sorted(diff.items()):
+    for k, v in diff.items():
         status = v['status']
         if status == 'nested':
             result.append(f"{'  ' * depth} {k}: \n"

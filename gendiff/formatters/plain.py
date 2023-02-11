@@ -1,18 +1,16 @@
 def format_value(data):
     if isinstance(data, bool):
-        return fstr(data).lower
+        return f"'{data.lower}'"
     elif isinstance(data, (dict, list, tuple)):
         return "[complex value]"
     elif isinstance(data, type(None)):
         return "null"
-    else:
-        data = str(data)
     return f"'{data}'"
 
 
 def plain_format(diff, route = ''):
     result = []
-    for k, v in sorted(diff.items()):
+    for k, v in diff.items():
         status = v['status']
         if len(route) > 1:
             k = route + '.' + k
@@ -23,7 +21,7 @@ def plain_format(diff, route = ''):
             new = format_value(v['new'])
             result.append(
                 f"Property '{k}' was updated. "
-                f"From {format_value(old)} to {format_value(new)}\n")
+                f"From {old} to {new}\n")
         elif status == 'added':
             value = format_value(v['value'])
             result.append(
