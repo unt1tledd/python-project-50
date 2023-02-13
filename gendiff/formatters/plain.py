@@ -8,7 +8,7 @@ def format_value(data):
     return f"'{data}'"
 
 
-def plain_format(diff, route = ''):
+def plain_format(diff, route=''):
     result = []
     for k, v in diff.items():
         status = v['status']

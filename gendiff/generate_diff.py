@@ -5,7 +5,7 @@ from gendiff.formatters.plain import plain_format
 from gendiff.formatters.json import json_format
 
 
-def generate_diff(filepath1, filepath2, name = 'stylish'):
+def generate_diff(filepath1, filepath2, name='stylish'):
     file1 = conversed(reading_file(filepath1))
     file2 = conversed(reading_file(filepath2))
     diff = make_diff(file1, file2)

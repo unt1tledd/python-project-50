@@ -1,6 +1,3 @@
-from gendiff.cli import conversed
-
-
 def make_diff(old_dict, new_dict):
     result = {}
     deleted_keys = old_dict.keys() - new_dict.keys()
@@ -15,13 +12,12 @@ def make_diff(old_dict, new_dict):
         new_value = new_dict[key]
         if isinstance(old_value, dict) and isinstance(new_value, dict):
             result[key] = {'status': 'nested',
-                            'value': make_diff(old_value, new_value)}
+                           'value': make_diff(old_value, new_value)}
         elif old_value == new_value:
             result[key] = {'status': 'unchanged',
-                            'value': new_value}
+                           'value': new_value}
         elif old_value != new_value:
             result[key] = {'status': 'changed',
-                            'old': old_value,
-                            'new': new_value}
+                           'old': old_value,
+                           'new': new_value}
     return dict(sorted(result.items()))
-    
