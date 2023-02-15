@@ -23,7 +23,15 @@
 - json
 
 ## Commands:
-gendiff -h
+### gendiff -h
 <a href="https://asciinema.org/a/G64dsihkrI2JLzQ5oCt3IMdMb" target="_blank"><img src="https://asciinema.org/a/G64dsihkrI2JLzQ5oCt3IMdMb.svg" /></a>
 
-gendiff filepath1 filepath2
+### gendiff filepath1 filepath2
+<a href="https://asciinema.org/a/0w1G7HrXeOXH7Dqe2dyjBYRA7" target="_blank"><img src="https://asciinema.org/a/0w1G7HrXeOXH7Dqe2dyjBYRA7.svg" /></a>
+<a href="https://asciinema.org/a/RO7mntMezPNofVhT9uA6ZpnLd" target="_blank"><img src="https://asciinema.org/a/RO7mntMezPNofVhT9uA6ZpnLd.svg" /></a>
+
+### gendiff -f plain filepath1 filepath2
+<a href="https://asciinema.org/a/Ve3zWyzArioihwiBGcjNx8gdG" target="_blank"><img src="https://asciinema.org/a/Ve3zWyzArioihwiBGcjNx8gdG.svg" /></a>
+
+### gendiff -f json filepath1 filepath2
+<a href="https://asciinema.org/a/PqyPoOOJxI3mI8pzC9b2Hgubu" target="_blank"><img src="https://asciinema.org/a/PqyPoOOJxI3mI8pzC9b2Hgubu.svg" /></a>
