@@ -1,10 +1,14 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
+description = "This CLI utility allows you to show changes in json and yaml files"
 authors = ["Софья Григорович <sonyashkin@icloud.com>"]
 readme = "README.md"
 packages = [{include = "gendiff"}]
+repository = "https://github.com/unt1tledd/python-project-50.git"
+classifiers = [
+"Programming Language :: Python :: 3.10",
+"Framework :: Pytest"]
 
 [tool.poetry.dependencies]
 python = "^3.10.9"
