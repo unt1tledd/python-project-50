@@ -22,3 +22,8 @@
 - plain 
 - json
 
+## Commands:
+gendiff -h
+<a href="https://asciinema.org/a/G64dsihkrI2JLzQ5oCt3IMdMb" target="_blank"><img src="https://asciinema.org/a/G64dsihkrI2JLzQ5oCt3IMdMb.svg" /></a>
+
+gendiff filepath1 filepath2
