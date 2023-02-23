@@ -1,8 +1,4 @@
-STATUS = {
-         'unchanged': ' ',
-         'added': '+',
-         'deleted': '-'
-         }
+STATUS = {'unchanged': ' ', 'added': '+', 'deleted': '-'}
 
 
 def format_value(data, depth=1):
