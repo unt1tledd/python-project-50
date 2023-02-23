@@ -13,7 +13,8 @@ jobs:
           python-version: 3.10.9
       - name: install dependencies
         run: |
-          pip3 install poetry flake8 pytest
+          pip3 install poetry flake8
+          poetry install pytest
           make install
       - name: Run linter
         run: make lint
