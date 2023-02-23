@@ -14,7 +14,7 @@ jobs:
       - name: install dependencies
         run: |
           pip3 install poetry flake8
-          poetry install pytest
+          pip3 install pytest
           make install
       - name: Run linter
         run: make lint
