@@ -1,7 +1,9 @@
 package-install:
 	python3 -m pip install --user dist/*.whl
 
-build:
+check: selfcheck test lint
+
+build: check
 	poetry build
 
 install:
