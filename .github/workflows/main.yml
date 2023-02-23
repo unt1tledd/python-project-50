@@ -4,7 +4,7 @@ on: push
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python
@@ -13,7 +13,7 @@ jobs:
           python-version: 3.10.9
       - name: install dependencies
         run: |
-          pip install poetry flake8 pytest
+          pip3 install poetry flake8 pytest
           make install
       - name: Run linter
         run: make lint
