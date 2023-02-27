@@ -3,8 +3,13 @@
 [![Actions Status](https://github.com/unt1tledd/python-project-50/workflows/hexlet-check/badge.svg)](https://github.com/unt1tledd/python-project-50/actions) <a href="https://codeclimate.com/github/unt1tledd/python-project-50/test_coverage"><img src="https://api.codeclimate.com/v1/badges/4eae82acd044397431cd/test_coverage" /></a> <a href="https://codeclimate.com/github/unt1tledd/python-project-50/maintainability"><img src="https://api.codeclimate.com/v1/badges/4eae82acd044397431cd/maintainability" /></a>
 
  <h2>Description</h2>
- This CLI utility allows you to show changes in json and yaml files.
+ <h4>This CLI utility allows you to show changes in json and yaml files.</h4>
 
+## Languages and Tools:
+ - python 3.10
+ - poetry 1.3.2
+ - pyyaml 6.0
+  
  <h2>Install</h2>
   
   ``` 
