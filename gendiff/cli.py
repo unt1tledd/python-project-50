@@ -14,7 +14,7 @@ def conversed(data):
 
 def reading_file(filepath):
     extension = filepath.split('.')
-    if extension[1] == 'yaml' or extension[1] == 'yml:
+    if extension[1] == 'yaml' or extension[1] == 'yml':
         file = reading_yaml(filepath)
     elif extension[1] == 'json':
         file = reading_json(filepath)
