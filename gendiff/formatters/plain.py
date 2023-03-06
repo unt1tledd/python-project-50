@@ -24,10 +24,8 @@ def plain_format(diff, route=''):
                 f"From {old} to {new}\n")
         elif status == 'added':
             value = format_value(d['value'])
-            result.append(
-                         f"Property '{k}' was added with value: {value}\n")
+            result.append(f"Property '{k}' was added with value: {value}\n")
         elif status == 'deleted':
-            result.append(
-                         f"Property '{k}' was removed\n")
+            result.append(f"Property '{k}' was removed\n")
     result = ''.join(result)
     return result
