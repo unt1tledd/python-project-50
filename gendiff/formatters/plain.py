@@ -25,9 +25,9 @@ def plain_format(diff, route=''):
         elif status == 'added':
             value = format_value(d['value'])
             result.append(
-                    f"Property '{k}' was added with value: {value}\n")
+                         f"Property '{k}' was added with value: {value}\n")
         elif status == 'deleted':
             result.append(
-                    f"Property '{k}' was removed\n")
+                         f"Property '{k}' was removed\n")
     result = ''.join(result)
     return result
