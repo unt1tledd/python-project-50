@@ -2,10 +2,10 @@ def make_diff(old_dict, new_dict):
     result = []
     all_key = old_dict.keys() | new_dict.keys()
     for key in sorted(all_key):
-        if key in old_dict and not in new_dict:
+        if key in old_dict and key not in new_dict:
             result.extend({'status': 'deleted',
                            'key': key, 'value': old_dict[key]})
-        elif key in new_dict and not in old_dict:
+        elif key in new_dict and key not in old_dict:
             result.append({'status': 'added',
                            'key': key, 'value': new_dict[key]})
         elif key in new_dict and key in old_dict:
