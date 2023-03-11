@@ -1,12 +1,13 @@
+from gendiff.cli import conversed
+
+
 def format_value(data):
-    if isinstance(data, bool):
-        return f"'{data.lower}'"
+    if isinstance(data, (bool, type(None))):
+        return f"'{conversed(data)}'"
     elif isinstance(data, (dict, list, tuple)):
         return "[complex value]"
-    elif isinstance(data, type(None)):
-        return "null"
     return f"'{data}'"
-
+    
 
 def plain_format(diff, route=''):
     result = []
@@ -14,6 +15,8 @@ def plain_format(diff, route=''):
         status = d['status']
         if len(route) > 1:
             k = route + '.' + d['key']
+        else:
+            k = d['key']
         if status == 'nested':
             result.extend(plain_format(d['value'], k))
         elif status == 'changed':
