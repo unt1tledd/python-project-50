@@ -42,4 +42,4 @@
 <a href="https://asciinema.org/a/Ve3zWyzArioihwiBGcjNx8gdG" target="_blank"><img src="https://asciinema.org/a/Ve3zWyzArioihwiBGcjNx8gdG.svg" /></a>
 
 ### gendiff -f json filepath1 filepath2
-<a href="https://asciinema.org/a/PqyPoOOJxI3mI8pzC9b2Hgubu" target="_blank"><img src="https://asciinema.org/a/PqyPoOOJxI3mI8pzC9b2Hgubu.svg" /></a>
+<a href="https://asciinema.org/a/Mh8sgxhe7v9xjGPXYnWvzs2T6" target="_blank"><img src="https://asciinema.org/a/Mh8sgxhe7v9xjGPXYnWvzs2T6.svg" /></a>
