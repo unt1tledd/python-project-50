@@ -7,7 +7,7 @@ def format_value(data):
     elif isinstance(data, (dict, list, tuple)):
         return "[complex value]"
     return f"'{data}'"
-    
+
 
 def plain_format(diff, route=''):
     result = []
