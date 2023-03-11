@@ -12,7 +12,7 @@ def make_diff(old_dict, new_dict):
             old = old_dict[key]
             new = new_dict[key]
             if isinstance(old, dict) and isinstance(new, dict):
-                result.append({'key': key, 'status': 'nested'
+                result.append({'key': key, 'status': 'nested',
                                'value': make_diff(old, new)})
             elif old == new:
                 result.append({'key': key, 'status': 'unchanged', 'value': old})
