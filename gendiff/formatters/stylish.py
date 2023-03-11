@@ -1,13 +1,18 @@
+from gendiff.cli import conversed
+
+
 STATUS = {'unchanged': ' ', 'added': '+', 'deleted': '-'}
 
 
 def format_value(data, depth=1):
     result = ["{"]
-    if not isinstance(data, dict):
-        return data
-    for k, v in data.items():
-        result.append(f"\n{'  ' * depth} {k}: {format_value(v, depth + 2)}")
-    result.append(f"\n{'  ' * (depth - 1)}}}")
+    if not isinstance(data, (dict, list)):
+        return conversed(data)
+    elif isinstance(data, dict):
+        for k, v in data.items():
+            v = conversed(v)
+            result.append(f"\n{'  ' * depth} {k}: {format_value(v, depth + 2)}")
+            result.append(f"\n{'  ' * (depth - 1)}}}")
     return ''.join(result)
 
 
