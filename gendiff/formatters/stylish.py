@@ -25,12 +25,12 @@ def stylish_format(diff, depth=1):
                           f"{stylish_format(d['value'], depth + 2)}")
             result.append(f"{'  ' * (depth + 1)}}}\n")
         elif status == 'changed':
-            result.append(f"{'  ' * depth}- {d['key']}: "
+            result.append(f"{'  ' * depth} - {d['key']}: "
                           f"{format_value(d['old'], depth + 2)}\n")
-            result.append(f"{'  ' * depth}+ {d['key']}: "
+            result.append(f"{'  ' * depth} + {d['key']}: "
                           f"{format_value(d['new'], depth + 2)}\n")
         else:
-            result.append(f"{'  ' * depth}{STATUS[status]} {d['key']}: "
+            result.append(f"{'  ' * depth} {STATUS[status]} {d['key']}: "
                           f"{format_value(d['value'], depth + 2)}\n")
     result = ''.join(result)
     return result
