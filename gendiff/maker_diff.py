@@ -8,7 +8,7 @@ def make_diff(old_dict, new_dict):
         elif key not in old_dict:
             result.append({'key': key, 'status': 'added',
                            'value': new_dict[key]})
-        elif key in new_dict and key in old_dict:
+        else:
             old = old_dict[key]
             new = new_dict[key]
             if isinstance(old, dict) and isinstance(new, dict):
