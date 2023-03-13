@@ -18,7 +18,7 @@ def plain_format(diff, route=''):
         else:
             key = dictionary['key']
         if status == 'nested':
-            result.extend(plain_format(dictionary['value'], k))
+            result.extend(plain_format(dictionary['value'], key))
         elif status == 'changed':
             old = format_value(dictionary['old'])
             new = format_value(dictionary['new'])
