@@ -11,24 +11,24 @@ def format_value(data):
 
 def plain_format(diff, route=''):
     result = []
-    for d in diff:
-        status = d['status']
+    for dictionary in diff:
+        status = dictionary['status']
         if len(route) > 1:
-            k = route + '.' + d['key']
+            key = route + '.' + dictionary['key']
         else:
-            k = d['key']
+            key = dictionary['key']
         if status == 'nested':
-            result.extend(plain_format(d['value'], k))
+            result.extend(plain_format(dictionary['value'], k))
         elif status == 'changed':
-            old = format_value(d['old'])
-            new = format_value(d['new'])
+            old = format_value(dictionary['old'])
+            new = format_value(dictionary['new'])
             result.append(
-                f"Property '{k}' was updated. "
+                f"Property '{key}' was updated. "
                 f"From {old} to {new}\n")
         elif status == 'added':
-            value = format_value(d['value'])
-            result.append(f"Property '{k}' was added with value: {value}\n")
+            value = format_value(dictionary['value'])
+            result.append(f"Property '{key}' was added with value: {value}\n")
         elif status == 'deleted':
-            result.append(f"Property '{k}' was removed\n")
+            result.append(f"Property '{key}' was removed\n")
     result = ''.join(result)
     return result
