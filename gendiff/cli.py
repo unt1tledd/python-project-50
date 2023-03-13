@@ -28,3 +28,9 @@ def parsed(file, format):
     else:
         file = yaml.safe_load(file)
     return file
+
+
+def read(filepath):
+    with open(filepath) as f:
+        file = f.read()
+    return file
