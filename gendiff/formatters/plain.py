@@ -1,6 +1,3 @@
-from gendiff.cli import conversed
-
-
 def format_value(data):
     if isinstance(data, bool):
         return f"'{str(data).lower}'"
