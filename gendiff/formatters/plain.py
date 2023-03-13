@@ -2,7 +2,7 @@ def format_value(data):
     if isinstance(data, bool):
         return f"'{str(data).lower}'"
     elif isinstance(data, type(None)):
-        return f"'null'"
+        return "'null'"
     elif isinstance(data, (dict, list, tuple)):
         return "[complex value]"
     return f"'{data}'"
