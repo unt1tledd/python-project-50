@@ -1,7 +1,11 @@
-from gendiff.cli import conversed
-
-
 STATUS = {'unchanged': ' ', 'added': '+', 'deleted': '-'}
+
+
+def conversed(data):
+    correct_values = {None: 'null', True: 'true', False: 'false'}
+    if isinstance(data, (bool, type(None))):
+        data = correct_values[data]
+    return data
 
 
 def format_value(data, depth=1):
