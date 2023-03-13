@@ -2,13 +2,6 @@ import json
 import yaml
 
 
-def conversed(data):
-    correct_values = {None: 'null', True: 'true', False: 'false'}
-    if isinstance(data, (bool, type(None))):
-        data = correct_values[data]
-    return data
-
-
 def reading_file(filepath):
     extension = filepath.split('.')
     if extension[1] == 'yaml' or extension[1] == 'yml':
