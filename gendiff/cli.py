@@ -3,7 +3,7 @@ import yaml
 
 
 def reading_file(filepath):
-    format = filepath.split('.')
+    format = filepath.split('.')[1]
     file = open(filepath)
     return file, format
 
