@@ -2,13 +2,13 @@ import json
 import yaml
 
 
-def reading_file(filepath):
+def open_file(filepath):
     format = filepath.split('.')[1]
     file = open(filepath)
     return file, format
 
 
-def parsed(file, format):
+def reading_file(file, format):
     if format == 'json':
         file = json.load(file)
     elif format == 'yaml' or format == 'yml':
