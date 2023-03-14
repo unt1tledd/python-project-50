@@ -1,6 +1,5 @@
 import pytest
 import json
-from gendiff.cli import read
 from gendiff.generate_diff import generate_diff
 
 
@@ -18,6 +17,12 @@ correct_diff = 'tests/fixtures/correct/correct_diff.txt'
 correct_stylish = 'tests/fixtures/correct/correct_stylish.txt'
 correct_plain = 'tests/fixtures/correct/correct_plain.txt'
 correct_json  = 'tests/fixtures/correct/correct_json.json'
+
+
+def read(filepath):
+    with open(filepath) as f:
+        file = f.read()
+    return file
 
 
 @pytest.mark.parametrize("test_input1,test_input2,formatter,expected",
