@@ -20,5 +20,5 @@ def make_diff(old_dict, new_dict):
             old = old_dict[key]
             new = new_dict[key]
             result.append({'key': key, 'status': 'changed',
-                            'old': old, 'new': new})
+                           'old': old, 'new': new})
     return result
