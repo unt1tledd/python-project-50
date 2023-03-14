@@ -11,7 +11,7 @@ def reading_file(filepath):
 def parsed(file, format):
     if format == 'json':
         file = json.load(file)
-    elif format == 'yaml' or format == 'yml:
+    elif format == 'yaml' or format == 'yml':
         file = yaml.safe_load(file)
     else:
         raise Exception("Unsupported type of file")
