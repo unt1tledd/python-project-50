@@ -2,7 +2,7 @@
 
 
 import argparse
-from gendiff.generate_diff import generate_diff
+from gendiff.generater_diff import generate_diff
 
 
 def parse():
