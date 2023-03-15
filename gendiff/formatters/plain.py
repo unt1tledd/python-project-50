@@ -19,17 +19,17 @@ def plain_format(diff, route=''):
         else:
             key = dictionary['key']
         if status == 'nested':
-            result.extend(plain_format(dictionary['value'], key))
+            result.append(plain_format(dictionary['value'], key))
         elif status == 'changed':
             old = format_value(dictionary['old'])
             new = format_value(dictionary['new'])
             result.append(
                 f"Property '{key}' was updated. "
-                f"From {old} to {new}\n")
+                f"From {old} to {new}")
         elif status == 'added':
             value = format_value(dictionary['value'])
-            result.append(f"Property '{key}' was added with value: {value}\n")
+            result.append(f"Property '{key}' was added with value: {value}")
         elif status == 'deleted':
-            result.append(f"Property '{key}' was removed\n")
-    result = ''.join(result)
+            result.append(f"Property '{key}' was removed")
+    result = '\n'.join(result)
     return result
