@@ -11,8 +11,6 @@ json3 = 'tests/fixtures/json/file3.json'
 json4 = 'tests/fixtures/json/file4.json'
 yaml3 = 'tests/fixtures/yaml/file3.yaml'
 yaml4 = 'tests/fixtures/yaml/file4.yaml'
-
-
 correct_diff = 'tests/fixtures/correct/correct_diff.txt'
 correct_stylish = 'tests/fixtures/correct/correct_stylish.txt'
 correct_plain = 'tests/fixtures/correct/correct_plain.txt'
