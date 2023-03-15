@@ -11,13 +11,13 @@ classifiers = [
 "Framework :: Pytest"]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.10.4"
 pyyaml = "^6.0"
 pytest-cov = "^4.0.0"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.0.0"
-pytest = "^7.2.1"
+pytest = "^7.2.2"
 
 [build-system]
 requires = ["poetry-core"]
