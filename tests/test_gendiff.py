@@ -14,7 +14,7 @@ yaml4 = 'tests/fixtures/yaml/file4.yaml'
 correct_diff = 'tests/fixtures/correct/correct_diff.txt'
 correct_stylish = 'tests/fixtures/correct/correct_stylish.txt'
 correct_plain = 'tests/fixtures/correct/correct_plain.txt'
-correct_json  = 'tests/fixtures/correct/correct_json.json'
+correct_json = 'tests/fixtures/correct/correct_json.json'
 
 
 def read(filepath):
