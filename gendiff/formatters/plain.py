@@ -3,6 +3,8 @@ def format_value(data):
         return f"{str(data).lower()}"
     elif isinstance(data, type(None)):
         return "null"
+    elif isinstance(data, int):
+        return data
     elif isinstance(data, (dict, list, tuple)):
         return "[complex value]"
     return f"'{data}'"
