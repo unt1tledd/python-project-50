@@ -12,7 +12,7 @@ def generate_diff(filepath1, filepath2, name='stylish'):
     file2 = reading_file(file2, format)
     diff = make_diff(file1, file2)
     if name == 'stylish':
-        diff = f"{{\n{stylish_format(diff)}}}\n"
+        diff = f"{{\n{stylish_format(diff)}}}"
     elif name == 'plain':
         diff = plain_format(diff)
     elif name == 'json':
