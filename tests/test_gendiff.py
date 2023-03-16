@@ -25,13 +25,13 @@ correct_json = 'tests/fixtures/correct/correct_json.json'
                              pytest.param(yaml3, yaml4, 'stylish', correct_stylish),
                              pytest.param(json3, json4, 'plain', correct_plain),
                              pytest.param(yaml3, yaml4, 'plain', correct_plain),
-                             pytest.param(json3, json4, 'json', json.dumps(json.load(open(correct_json)))),
-                             pytest.param(yaml3, yaml4, 'json', json.dumps(json.load(open(correct_json))))
+                             pytest.param(json3, json4, 'json', correct_json),
+                             pytest.param(yaml3, yaml4, 'json', correct_json)
                          ]
                          )
 def test_generate_diff(test_input1, test_input2, formatter, expected):
-    if isinstance(expected, list):
-        continue
+    if formatter == 'json':
+        json.dumps(json.load(open(expected)))
     else:
         with open(expected) as file:
             expected_result = file.read()
