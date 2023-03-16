@@ -31,8 +31,8 @@ correct_json = 'tests/fixtures/correct/correct_json.json'
                          )
 def test_generate_diff(test_input1, test_input2, formatter, expected):
     if formatter == 'json':
-         expected_result = json.dumps(json.load(open(expected)))
+      expected = json.dumps(json.load(open(expected)))
     else:
-        with open(expected) as file:
-            expected_result = file.read()
+      with open(expected) as file:
+        expected_result = file.read()
     assert generate_diff(test_input1, test_input2, formatter) == expected_result
