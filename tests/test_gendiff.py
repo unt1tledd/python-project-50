@@ -17,12 +17,6 @@ correct_plain = 'tests/fixtures/correct/correct_plain.txt'
 correct_json = 'tests/fixtures/correct/correct_json.json'
 
 
-def read(filepath):
-    with open(filepath) as f:
-        file = f.read()
-    return file
-
-
 @pytest.mark.parametrize("test_input1,test_input2,formatter,expected",
                          [
                              pytest.param(json1, json2, 'stylish', correct_diff),
@@ -36,6 +30,9 @@ def read(filepath):
                          ]
                          )
 def test_generate_diff(test_input1, test_input2, formatter, expected):
-    with open(expected) as file:
-        expected_result = file.read()
+    if isinstance(expected, list):
+        continue
+    else:
+        with open(expected) as file:
+            expected_result = file.read()
     assert generate_diff(test_input1, test_input2, formatter) == expected_result
