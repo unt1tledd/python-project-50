@@ -2,7 +2,7 @@ import json
 import yaml
 
 
-def open_file(filepath):
+def get_data(filepath):
     format = filepath.split('.')[1]
     file = open(filepath)
     return file, format
