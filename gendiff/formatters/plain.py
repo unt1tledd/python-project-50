@@ -19,7 +19,7 @@ def format_plain(diff, route=''):
         else:
             key = dictionary['key']
         if status == 'nested':
-            result.append(plain_format(dictionary['value'], key))
+            result.append(format_plain(dictionary['value'], key))
         elif status == 'changed':
             old = format_value(dictionary['old'])
             new = format_value(dictionary['new'])
