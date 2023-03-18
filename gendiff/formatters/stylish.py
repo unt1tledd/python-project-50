@@ -27,7 +27,7 @@ def format_stylish(diff, depth=1):
         key = dictionary['key']
         if status == 'nested':
             result.append(f"{'  ' * depth}  {key}: {{\n"
-                          f"{stylish_format(dictionary['value'], depth + 2)}")
+                          f"{format_stylish(dictionary['value'], depth + 2)}")
             result.append(f"{'  ' * (depth + 1)}}}\n")
         elif status == 'changed':
             result.append(f"{'  ' * depth}- {key}: "
