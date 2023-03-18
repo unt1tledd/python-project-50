@@ -10,7 +10,7 @@ def format_value(data):
     return f"'{data}'"
 
 
-def plain_format(diff, route=''):
+def format_plain(diff, route=''):
     result = []
     for dictionary in diff:
         status = dictionary['status']
