@@ -20,7 +20,7 @@ def format_value(data, depth=1):
     return '\n'.join(result)
 
 
-def stylish_format(diff, depth=1):
+def format_stylish(diff, depth=1):
     result = []
     for dictionary in diff:
         status = dictionary['status']
