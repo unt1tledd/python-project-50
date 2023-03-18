@@ -11,7 +11,7 @@ def get_data(filepath):
     return file, format
 
 
-def reading_file(file, format):
+def read_file(file, format):
     if format == 'json':
         file = json.load(file)
     else:
