@@ -1,7 +1,7 @@
 STATUS = {'unchanged': ' ', 'added': '+', 'deleted': '-'}
 
 
-def conversed(data):
+def converse(data):
     correct_values = {None: 'null', True: 'true', False: 'false'}
     if isinstance(data, (bool, type(None))):
         data = correct_values[data]
