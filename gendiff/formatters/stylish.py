@@ -11,10 +11,10 @@ def converse(data):
 def format_value(data, depth=1):
     result = ["{"]
     if not isinstance(data, (dict, list)):
-        return conversed(data)
+        return converse(data)
     elif isinstance(data, dict):
         for key, val in data.items():
-            val = conversed(val)
+            val = converse(val)
             result.append(f" {'  ' * depth} {key}: {format_value(val, depth + 2)}")
         result.append(f"{'  ' * (depth - 1)}}}")
     return '\n'.join(result)
