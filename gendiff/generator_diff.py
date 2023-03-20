@@ -16,9 +16,9 @@ def formatted(name_formater):
         raise ValueError('This format is not supported:(')
 
 
-def generate_diff(filepath1, filepath2, name_formatters='stylish'):
+def generate_diff(filepath1, filepath2, name_formatter='stylish'):
     file1 = get_data(filepath1)
     file2 = get_data(filepath2)
     diff = make_diff(file1, file2)
-    diff = formatted(name_formatters)
+    diff = formatted(name_formatter)
     return diff
