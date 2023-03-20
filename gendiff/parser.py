@@ -5,13 +5,13 @@ import yaml
 def get_data(filepath):
     format = filepath.split('.')[1]
     if format == 'yaml' or format == 'yml' or format == 'json':
-        file = open(filepath)
+        file =parse(open(filepath), format)
     else:
         raise Exception("Unsupported type of file")
-    return file, format
+    return file
 
 
-def read_file(file, format):
+def parse(file, format):
     if format == 'json':
         file = json.load(file)
     else:
