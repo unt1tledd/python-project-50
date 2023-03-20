@@ -6,10 +6,8 @@ from gendiff.formatters.json import format_json
 
 
 def generate_diff(filepath1, filepath2, name='stylish'):
-    file1, format = get_data(filepath1)
-    file1 = read_file(file1, format)
-    file2, format = get_data(filepath2)
-    file2 = read_file(file2, format)
+    file1 = get_data(filepath1)
+    file2 = get_data(filepath2)
     diff = make_diff(file1, file2)
     if name == 'stylish':
         diff = f"{{\n{format_stylish(diff)}}}"
