@@ -1,4 +1,4 @@
-from gendiff.parser import read_file, get_data
+from gendiff.parser import get_data
 from gendiff.maker_diff import make_diff
 from gendiff.formatters.stylish import format_stylish
 from gendiff.formatters.plain import format_plain
