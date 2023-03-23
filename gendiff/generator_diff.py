@@ -14,6 +14,7 @@ def formatted(format, diff):
         diff = format_json(diff)
     else:
         raise ValueError('This format is not supported:(')
+    return diff
 
 
 def generate_diff(filepath1, filepath2, format='stylish'):
