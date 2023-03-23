@@ -5,7 +5,7 @@ import yaml
 def get_data(filepath):
     format = filepath.split('.')[1]
     if format == 'yaml' or format == 'yml':
-        file = yaml.safe_load(filepath)
+        file = yaml.load(filepath)
     elif format == 'json':
         file = json.load(filepath)
     else:
