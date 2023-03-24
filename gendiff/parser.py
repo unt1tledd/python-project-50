@@ -7,7 +7,7 @@ def get_data(filepath):
     if format == 'yaml' or format == 'yml':
         file = yaml.load(filepath)
     elif format == 'json':
-        file = json.load(filepath)
+        file = json.safe_load(filepath)
     else:
         raise Exception("Unsupported type of file")
     return file
